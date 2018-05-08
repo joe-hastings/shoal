@@ -1,13 +1,14 @@
 // MASS MULTIPLIERS - these values represent the relationship between the fish's properties and its mass
 var ENERGY = 10,
-	MAX_SPEED = 12,
+	MAX_SPEED = 10,
 	MAX_FORCE = .1,
 	SEPARATION_RANGE = 30,
 	LOOK_RANGE = 100,
 	SMELL_RANGE = 300,
 	LENGTH = 20,
 	FERTILITY = .1,
-	BITE = .1;
+	BITE = .1,
+	FISH_COLOR = '#3a536b';
 
 // Fish constructor
 function Fish(mass, x, y, hue)
@@ -28,7 +29,8 @@ function Fish(mass, x, y, hue)
 	this.acceleration = new Vector(0, 0);
 	this.wandering = new Vector(.2,.2);
 	this.hue = hue || Math.random() < .5 ? Math.random()*.5 : 1 - Math.random()*.5; // <- the hue is used for color generation and mating
-	this.color = Fish.rgb2hex(Fish.hsv2rgb(this.hue, 1, 1));
+	// this.color = Fish.rgb2hex(Fish.hsv2rgb(this.hue, 1, 1));
+	this.color = FISH_COLOR;
 	this.skin = this.color;
 	this.dead = false;
 	this.age = 1;

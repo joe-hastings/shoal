@@ -22,16 +22,6 @@ Food.prototype = {
 
 		ctx.beginPath();
 		ctx.arc(this.location.x, this.location.y, this.radius, 0, this.TWO_PI);
-
-		var old = ctx.globalAlpha;
-		ctx.globalAlpha = .5
-		ctx.fillStyle = "#eeeeee";
-		ctx.fill();
-		ctx.font = '14px Verdana';
-		ctx.fillStyle = "#000000";
-		ctx.globalAlpha = this.energy > 0 ? .5 : this.radius/100;
-		ctx.fillText("FOOD",this.location.x - 20,this.location.y + 5);
-		ctx.globalAlpha = old;
 	},
 
 	// update the food
